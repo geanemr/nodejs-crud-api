@@ -8,6 +8,11 @@ app.get("/", (req, res) => {
   res.send("Hello World updated!!");
 });
 
+app.post("/api/products", (req, res) => {
+ console.log(req.body);
+  res.send(req.body);
+});
+
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
